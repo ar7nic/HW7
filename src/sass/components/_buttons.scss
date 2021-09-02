@@ -1,0 +1,43 @@
+.header-buttons {
+  margin-top: 49px;
+  .button {
+    margin: 15px 27px;
+  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+//.button:first-child  {
+//    margin-right: 27px;
+//}
+
+.button {
+  display: inline-block;
+  //text-align: center;
+  width: 210px;
+  //margin: 64px 27px 196px 158px;
+  padding: 16px 0 16px;
+  border-radius: 10px;
+  border: solid 1px rgba(#ffffff, 0.2);
+  @include font(600, 16px);
+  //text-decoration: none;
+  color: $main-color;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $secondary-color;
+    //cursor: pointer;
+  }
+  //a {
+  //  @include font(600, 16px);
+  //  text-decoration: none;
+  //}
+}
+
+.arrow-down {
+  display: block;
+  margin: 0 auto 51px;
+  width: 34px;
+  height: 34px;
+  background-image: url("../img/circle_arrow_down.png");
+}
