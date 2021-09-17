@@ -1,0 +1,19 @@
+.footer {
+  max-height: 141px;
+  height: 100%;
+  //margin: 4350px 0 0;
+  //padding: 46px 448px 81px 449px;
+  background-color: #3b434c;
+  img {
+    position: relative;
+    top:2px;
+  }
+}
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 46px;
+  color: $main-color;
+}

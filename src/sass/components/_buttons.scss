@@ -21,20 +21,40 @@
   @include current-font(600, 16px);
   color: $main-color;
   text-transform: uppercase;
-  &:hover {
-    background-color: $secondary-color;
-  }
-}
-
-.subscribe-form .button {
-  max-width: 269px;
-  width: 100%;
-  margin-top: 15px;
   background-color: transparent;
   &:hover {
     background-color: $secondary-color;
   }
+  .subscribe-form & {
+    max-width: 269px;
+    width: 100%;
+    margin-top: 15px;
+    background-color: transparent;
+    &:hover {
+      background-color: $secondary-color;
+    }
+  }
+  .works &.more {
+    border: 1px solid rgba(59, 67, 76, 0.2)  ;
+    margin: 100px auto;
+    //background-color: $main-color;
+    color: #3b434c;
+    &:hover {
+      color: $main-color;
+    }
+  }
+
 }
+
+//.subscribe-form .button {
+//  max-width: 269px;
+//  width: 100%;
+//  margin-top: 15px;
+//  background-color: transparent;
+//  &:hover {
+//    background-color: $secondary-color;
+//  }
+//}
 
 //.hover-content .button:hover {
 //  color: $secondary-color;
@@ -47,4 +67,19 @@
   width: 34px;
   height: 34px;
   background-image: url("../img/circle_arrow_down.png");
+}
+
+//.works .button {
+//  margin: 100px auto;
+//  background-color: $main-color;
+//  color: #3b434c;
+//}
+
+.hello__button {
+
+    //  margin: 0 14px 140px;
+    //float: left;
+  display: inline-block;
+  float: left;
+  margin-bottom: 140px;
 }

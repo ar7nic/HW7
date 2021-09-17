@@ -22,13 +22,26 @@ body {
 }
 
 .container {
-  max-width: 1164px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
+  .design & {
+    max-width: 1050px;
+    width: 100%;
+  }
+  .carousel & {
+    max-width: 800px;
+    width: 100%;
+  }
+  .footer & {
+    //display: flex;
+    max-width: 1139px;
+    //align-items: center;
+  }
 }
 
 header.navigate {
-  padding-top: 110px;
+  padding: 110px 18px 0 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -141,15 +154,15 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    max-width: 1050px;
-    width: 100%;
+    //max-width: 1050px;
+    //width: 100%;
     padding: 101px 0 112px;
   }
   &-item {
     display: flex;
     //flex-wrap: wrap;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     max-width: 180px;
     width: 100%;
@@ -189,30 +202,40 @@ h1 {
   background-size: cover;
 }
 
+.input {
+  //display: flex;
+  //max-width: 562px;
+  height: 50px;
+  width: 100%;
+  padding: 16px 15px 16px 15px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  //margin: 0 30px;
+  //@include current-font(300, 16px);
+}
+
 .subscribe-form {
   text-align: center;
   margin: 100px 0;
-  input {
+  .input {
+  //  //display: flex;
     max-width: 562px;
-    width: 100%;
-    padding: 16px 15px 16px 15px;
-    border-radius: 10px;
-    background-color: #ffffff;
-    margin-right: 30px;
+  //  width: 100%;
+  //  padding: 16px 15px 16px 15px;
+  //  border-radius: 10px;
+  //  background-color: #ffffff;
+    margin: 0 30px;
     @include current-font(300, 16px);
   }
 }
 
-.works {
-  background: $main-color;
+.title {
   text-align: center;
-  &-text {
-    margin: 100px 0;
-  }
   h2 {
     @include current-font(600,35px);
     line-height: 40px;
     text-transform: uppercase;
+    margin: 0 0 29px;
     span {
       color: $secondary-color;
     }
@@ -224,9 +247,24 @@ h1 {
     width: 100%;
     margin: 0 auto;
   }
+}
+
+.works {
+  background: $main-color;
+  text-align: center;
+  &__items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  &-text {
+    margin: 100px 0;
+  }
+
+
   &-item {
     position: relative;
-    float: left;
+    //float: left;
     border-radius: 10px;
     margin: 14px;
     max-width: 360px;
@@ -263,7 +301,222 @@ h1 {
       .button {
         background-color: $main-color;
         color: $secondary-color;
+        //margin: 0 auto;
       }
     }
   }
 }
+
+.carousel {
+  background: url("../img/background_client.png") center no-repeat;
+  padding: 100px 15px;
+  &-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    color: $main-color;
+    &:before {
+      content: url("../img/arrow_left.png");
+      position: absolute;
+      top: 50%;
+      left: -180px;
+    }
+    &:after {
+      content: url("../img/arrow_right.png");
+      position: absolute;
+      top: 50%;
+      right: -180px;
+    }
+    &:hover:before, &:hover:after {
+    cursor: pointer;
+  }
+  }
+  &-text {
+    flex: 1 1 100%;
+    @include current-font(400,25px);
+    line-height: 40/25*100%;
+    font-style: italic;
+    text-align: center;
+  }
+  &-name {
+    @include current-font(400,18px);
+    line-height: 40/18*100%;
+  }
+}
+
+.team {
+  &-text {
+    padding: 100px 0 130px;
+  }
+  &-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    //margin: 130px 0 0;
+  }
+  &-column {
+    flex: 0 0 25%;
+  }
+  &-item {
+    display: flex;
+    flex-direction: column;
+    //flex-wrap: wrap;
+    object-fit: cover;
+    max-width: 256px;
+    text-align: center;
+    align-items: center;
+    filter: grayscale(1);
+    opacity: 70%;
+    &:hover {
+      filter: grayscale(0);
+      transition: 0.3ms;
+      opacity: 100%;
+        .team-photo img {
+        transform: scale(1.1);
+          transform-origin: bottom;
+          box-sizing: border-box;
+        border-bottom: 5px solid $secondary-color;
+      }
+    }
+    &>*:not(:last-child) {
+      margin: 0 0 28px;
+    }
+    &__name {
+      @include current-font(600,25px);
+      text-transform: uppercase;
+      //margin: 30px 0 0;
+    }
+    &__text {
+      @include current-font(400,14px);
+      line-height: 186%;
+      margin: 0;
+    }
+  }
+  &-photo {
+    width: 235px;
+    height: 284px;
+    border-radius: 5px;
+    img {
+      height: 100%;
+      //filter: grayscale(1);
+    }
+  }
+}
+
+.team-item .card-icons {
+  a :not(:last-child) {
+  margin: 0 14px 0 0;
+  }
+  img {
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+}
+
+.team__carousel-dots {
+  display: flex;
+  //margin: 0 auto;
+  justify-content: center;
+  ul {
+    margin: 97px 0 100px;
+    display: flex;
+    align-items: center;
+    &>*:not(:last-child) {
+      margin-right: 19px;
+    }
+  }
+  .dots {
+
+      border-radius: 50%;
+      width: 13px;
+      height: 13px;
+      background-color: #3b434c;
+      opacity: 70%;
+      &.active {
+        width: 15px;
+        height: 15px;
+        background-color: $secondary-color;
+      }
+  }
+}
+
+
+
+.hello {
+  background: url("../img/background_form.png") center no-repeat;
+  background-size: cover;
+  &__container {
+    max-width: 858px;
+  }
+    .hello__text {
+      color: $main-color;
+      padding: 102px 0 97px;
+    }
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    input, textarea {
+      @include current-font(400,16px);
+    }
+    //margin: 0 -14px;
+  }
+  &__email {
+    //display: flex;
+    flex: 0 1 50%;
+    padding: 0 14px;
+    @include current-font(400,16px);
+  }
+  &__subject {
+    //display: flex;
+    flex: 0 1 50%;
+    padding: 0 14px;
+  }
+  &__message {
+    display: flex;
+    flex: 0 1 100%;
+    margin: 30px 0;
+    padding: 0 14px;
+    //height: 199px;
+    //border-radius: 10px;
+    //height: 100%;
+    textarea {
+      height: 199px;
+      border-radius: 10px;
+      padding: 16px;
+      //height: 100%;
+      width: 100%;
+      //height: 100%;
+    }
+  }
+
+  &__icons {
+    //display: flex;
+    float: right;
+    //position: relative;
+    //bottom: 186px;
+    margin-top: 5px;
+    &>*:not(:last-child) {
+      margin-right: 20px;
+    }
+    &>*:last-child {
+      margin-right: 14px;
+    }
+    //max-width: 295px;
+    //justify-content: space-between;
+    //align-items: center;
+  }
+  &__icon {
+    flex: 0 0 20%;
+    width: 43px;
+    height: 43px;
+
+  }
+}
+
+
+
