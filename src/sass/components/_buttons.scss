@@ -8,9 +8,6 @@
   align-items: center;
   flex-wrap: wrap;
 }
-//.button:first-child  {
-//    margin-right: 27px;
-//}
 
 .button {
   display: inline-block;
@@ -37,29 +34,12 @@
   .works &.more {
     border: 1px solid rgba(59, 67, 76, 0.2)  ;
     margin: 100px auto;
-    //background-color: $main-color;
     color: #3b434c;
     &:hover {
       color: $main-color;
     }
   }
-
 }
-
-//.subscribe-form .button {
-//  max-width: 269px;
-//  width: 100%;
-//  margin-top: 15px;
-//  background-color: transparent;
-//  &:hover {
-//    background-color: $secondary-color;
-//  }
-//}
-
-//.hover-content .button:hover {
-//  color: $secondary-color;
-//  background-color: $main-color;
-//}
 
 .arrow-down {
   display: block;
@@ -69,16 +49,7 @@
   background-image: url("../img/circle_arrow_down.png");
 }
 
-//.works .button {
-//  margin: 100px auto;
-//  background-color: $main-color;
-//  color: #3b434c;
-//}
-
 .hello__button {
-
-    //  margin: 0 14px 140px;
-    //float: left;
   display: inline-block;
   float: left;
   margin-bottom: 140px;
